@@ -1,0 +1,47 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block titre %}
+    <title>Zanimo Animaux</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Animaux list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Idanimaux</th>
+                <th>Type</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animaux in animauxes %}
+            <tr>
+                <td><a href="{{ path('animaux_show', { 'idanimaux': animaux.idanimaux }) }}">{{ animaux.idanimaux }}</a></td>
+                <td>{{ animaux.type }}</td>
+                <td>{{ animaux.prix }}</td>
+                <td>{{ animaux.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('animaux_show', { 'idanimaux': animaux.idanimaux }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('animaux_edit', { 'idanimaux': animaux.idanimaux }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('animaux_new') }}">Create a new animaux</a>
+        </li>
+    </ul>
+{% endblock %}

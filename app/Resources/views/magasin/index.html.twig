@@ -1,0 +1,47 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block titre %}
+    <title>Zanimo Magasin</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Magasins list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Idmagasin</th>
+                <th>Lieu</th>
+                <th>Contact</th>
+                <th>Owner</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for magasin in magasins %}
+            <tr>
+                <td><a href="{{ path('magasin_show', { 'idmagasin': magasin.idmagasin }) }}">{{ magasin.idmagasin }}</a></td>
+                <td>{{ magasin.lieu }}</td>
+                <td>{{ magasin.contact }}</td>
+                <td>{{ magasin.owner }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('magasin_show', { 'idmagasin': magasin.idmagasin }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('magasin_edit', { 'idmagasin': magasin.idmagasin }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('magasin_new') }}">Create a new magasin</a>
+        </li>
+    </ul>
+{% endblock %}

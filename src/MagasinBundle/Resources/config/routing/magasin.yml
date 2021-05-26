@@ -1,0 +1,24 @@
+magasin_index:
+    path:     /
+    defaults: { _controller: "MagasinBundle:Magasin:index" }
+    methods:  GET
+
+magasin_show:
+    path:     /{idmagasin}/show
+    defaults: { _controller: "MagasinBundle:Magasin:show" }
+    methods:  GET
+
+magasin_new:
+    path:     /new
+    defaults: { _controller: "MagasinBundle:Magasin:new" }
+    methods:  [GET, POST]
+
+magasin_edit:
+    path:     /{idmagasin}/edit
+    defaults: { _controller: "MagasinBundle:Magasin:edit" }
+    methods:  [GET, POST]
+
+magasin_delete:
+    path:     /{idmagasin}/delete
+    defaults: { _controller: "MagasinBundle:Magasin:delete" }
+    methods:  DELETE

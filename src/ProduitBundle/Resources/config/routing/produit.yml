@@ -1,0 +1,24 @@
+produit_index:
+    path:     /
+    defaults: { _controller: "ProduitBundle:Produit:index" }
+    methods:  GET
+
+produit_show:
+    path:     /{idproduit}/show
+    defaults: { _controller: "ProduitBundle:Produit:show" }
+    methods:  GET
+
+produit_new:
+    path:     /new
+    defaults: { _controller: "ProduitBundle:Produit:new" }
+    methods:  [GET, POST]
+
+produit_edit:
+    path:     /{idproduit}/edit
+    defaults: { _controller: "ProduitBundle:Produit:edit" }
+    methods:  [GET, POST]
+
+produit_delete:
+    path:     /{idproduit}/delete
+    defaults: { _controller: "ProduitBundle:Produit:delete" }
+    methods:  DELETE
